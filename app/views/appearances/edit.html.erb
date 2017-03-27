@@ -1,0 +1,9 @@
+<h1>Edit form</h1>
+
+<%= form_for (@appearance) do |f| %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating, in: (1..5), class: 'form-control' %>
+  <%= f.collection_select :episode_id, Episode.all, :id, :date, class: 'form-control' %>
+  <%= f.collection_select :guest_id, Guest.all, :id, :name, class: 'form-control' %>
+  <%= f.submit %>
+<% end %>
